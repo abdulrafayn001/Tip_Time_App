@@ -7,33 +7,51 @@
     tools:context=".MainActivity"
     android:padding="16dp"
     >
+    <ImageView
+        android:id="@+id/icon_cost_of_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:srcCompat="@drawable/ic_store"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text"
+        app:layout_constraintBottom_toBottomOf="@id/text" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:hint="@string/cost_of_service"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icon_cost_of_service"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cost_of_service"
-            android:inputType="numberDecimal"
-            android:layout_width="160dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
+    <ImageView
+        android:id="@+id/icon_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:srcCompat="@drawable/ic_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/service_question"
+        app:layout_constraintBottom_toBottomOf="@id/service_question" />
 
     <TextView
         android:id="@+id/service_question"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/Widget.TipTime.TextView"
         android:text="@string/how_was_the_service"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text"
-        />
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/icon_service"
+        app:layout_constraintTop_toBottomOf="@id/text" />
 
     <RadioGroup
         android:id="@+id/options"
@@ -42,6 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/service_question"
         android:orientation="vertical"
+        style="Widget.TipTime.CompoundButton.RadioButton"
         >
         <RadioButton
             android:id="@+id/option_twenty_percent"
@@ -64,15 +83,27 @@
             />
     </RadioGroup>
 
+    <ImageView
+        android:id="@+id/icon_round_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:srcCompat="@drawable/ic_round_up"
+        app:layout_constraintTop_toTopOf="@id/round_up_id"
+        app:layout_constraintBottom_toBottomOf="@id/round_up_id"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/round_up_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/round_up_tip"
         android:checked="true"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/round_up_tip"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icon_service"
         app:layout_constraintTop_toBottomOf="@id/options"
+        android:layout_marginStart="16dp"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
@@ -88,6 +119,7 @@
     <TextView
         android:id="@+id/tip_rsult"
         android:layout_width="wrap_content"
+        style="@style/Widget.TipTime.TextView"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/calculate_btn"
         app:layout_constraintStart_toStartOf="parent"
