@@ -18,4 +18,11 @@
         android:inputType="numberDecimal"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/how_was_the_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cost_of_service"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

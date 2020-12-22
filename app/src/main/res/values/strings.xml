@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Tip Time</string>
     <string name="cost_of_service">Cost of Service</string>
+    <string name="how_was_the_service">How was the service?</string>
 </resources>
